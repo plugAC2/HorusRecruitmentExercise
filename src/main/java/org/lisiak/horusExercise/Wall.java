@@ -25,6 +25,12 @@ public class Wall implements Structure {
 
     @Override
     public int count() {
-        return 0;
+        return blocks.stream()
+                .mapToInt(Block::count)
+                .sum();
+    }
+
+    public void setBlocks(List<Block> blocks) {
+        this.blocks = blocks;
     }
 }
